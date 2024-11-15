@@ -169,7 +169,6 @@ public class AdminService implements AdminImpl {
             response.setSuccess(0);
             response.setMessage("Invalid password");
         }
-
         return response;
     }
 

@@ -10,6 +10,4 @@ public interface PatientRepository extends GenericRepository<Patient,Long>{
     // Find a patient by their user ID
     Patient findByUserId(Long userId);
 
-    // Optional: Find patients by their status (if applicable)
-    List<Patient> findByStatus(String status);
 }

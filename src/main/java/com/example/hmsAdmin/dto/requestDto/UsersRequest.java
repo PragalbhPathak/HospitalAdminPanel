@@ -18,6 +18,4 @@ public class UsersRequest {
     private String role;
     private boolean findAll;
 
-//    private List<Long> userIds; // List of user IDs for deletion
-//    private List<String> usernames; // List of usernames for deletion
 }

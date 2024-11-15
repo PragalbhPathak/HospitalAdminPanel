@@ -21,8 +21,6 @@ public class Admin {
     @NotBlank(message = "name can't be blank")
     @Column(name = "name",nullable = false)
     private String name;
-    //private int age;
-    //private String gender;
 
     @Email(message = "Email should be valid")
     @NotBlank(message = "Email can't be empty")
@@ -36,11 +34,9 @@ public class Admin {
 
     @Column(name = "status")
     private String status;
-    //private Date dob;
 
     @Pattern(regexp = "^[0-9]{10,12}$", message = "Phone number must be a valid phone number with 10 to 12 digits")
     @Column(name = "contact")
     private String contact;
-    //private String address;
 }
 

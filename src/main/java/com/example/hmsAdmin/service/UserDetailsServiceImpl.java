@@ -19,7 +19,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Admin> admin = adminRepository.findByEmail(email);
-        if (admin.isEmpty()) { // Check if student is present
+        if (admin.isEmpty()) {
             throw new UsernameNotFoundException("Admin not found");
         }
 //        GrantedAuthority authority = new SimpleGrantedAuthority("ROLE_ADMIN");

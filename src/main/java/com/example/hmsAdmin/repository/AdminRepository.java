@@ -11,5 +11,4 @@ public interface AdminRepository extends GenericRepository<Admin,Long>{
     Optional<Admin> findByEmail(String email);
     List<Admin> findByName(String name);
 
-   // Optional<Admin> findAdByEmail(String email);
 }

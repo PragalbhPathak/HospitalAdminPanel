@@ -45,12 +45,10 @@ public class UsersController {
                 return ResponseEntity.status(HttpStatus.MULTI_STATUS) // 207 status code
                         .body(response);
             }
-
             // For full success
             return ResponseEntity.ok(response);
+
         } catch (Exception e) {
-            // Log the exception for debugging and tracking purposes
-            // logger.error("Error occurred while creating or updating users", e);
 
             // Return internal server error response with detailed error message
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -58,32 +56,7 @@ public class UsersController {
         }
     }
 
-//
-//    @PostMapping(REST_MAPPING_CONSTRAINT.DEFINE_API.CREATE_OR_UPDATE_USERS)
-//    public ResponseEntity<BaseApiResponse> createOrUpdate(@Valid @RequestBody List<UsersRequest> userRequests) {
-//        if (userRequests == null || userRequests.isEmpty()) {
-//            return ResponseEntity.badRequest()
-//                    .body(new BaseApiResponse(BAD_REQUEST, FAILURE, FIELD_REQUIRED_MESSAGE, Collections.emptyList()));
-//        }
-//
-//        try {
-//            // Call the service method if validation passes
-//            BaseApiResponse response = usersImpl.createOrUpdateUsers(userRequests);
-//
-//            // Handle partial success
-//            if ("Partial Status".equals(response.getStatus())) {
-//                return ResponseEntity.status(207).body(response); // HTTP 207 for multi-status
-//            }
-//
-//            return ResponseEntity.ok(response);
-//        } catch (Exception e) {
-//            // Handle any exceptions that may occur during processing
-//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-//                    .body(new BaseApiResponse(INTERNAL_SERVER_ERROR, FAILURE, COMMON_ERROR, Collections.emptyList()));
-//        }
-//    }
-////
-////    ------------------------------------------------------------------------------------------------------------------------
+//    ------------------------------------------------------------------------------------------------------------------------
 
     @PostMapping(REST_MAPPING_CONSTRAINT.DEFINE_API.FETCH_USERS)
     public ResponseEntity<BaseApiResponse> fetchUsers(@RequestBody List<UsersRequest> requests) {
